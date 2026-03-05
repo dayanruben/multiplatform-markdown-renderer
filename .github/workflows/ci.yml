@@ -9,7 +9,6 @@ on:
 
 jobs:
   publish_archives:
-    if: github.repository == 'mikepenz/multiplatform-markdown-renderer'
     name: Publish Archives
     if: startsWith(github.ref, 'refs/tags/') && github.repository == 'mikepenz/multiplatform-markdown-renderer'
 
