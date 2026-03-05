@@ -10,7 +10,7 @@ on:
 jobs:
   publish_archives:
     name: Publish Archives
-    if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/') && github.repository == 'mikepenz/multiplatform-markdown-renderer'
 
     strategy:
       matrix:
@@ -133,17 +133,17 @@ jobs:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Prepare Keystore and Local.
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'mikepenz/multiplatform-markdown-renderer'
         run: |
           echo "${{ secrets.KEYSTORE }}" > opensource.jks.asc
           gpg -d --passphrase "${{ secrets.KEYSTORE_PASSPHRASE }}" --batch "opensource.jks.asc" > "sample/android/opensource.jks"
 
       - name: Build Release App
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'mikepenz/multiplatform-markdown-renderer'
         run: ./gradlew sample:android:assembleRelease sample:android:bundleRelease -P"com.mikepenz.android.signing.enabled"="true" -P"com.mikepenz.android.signing.storeFile"="opensource.jks" -P"com.mikepenz.android.signing.storePassword"="${{ secrets.STORE_PASSWORD }}" -P"com.mikepenz.android.signing.keyAlias"="${{ secrets.KEY_ALIAS }}" -P"com.mikepenz.android.signing.keyPassword"="${{ secrets.KEY_PASSWORD }}"
 
       - name: Collect artifacts
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'mikepenz/multiplatform-markdown-renderer'
         run: |
           COLLECT_PWD=${PWD}
           mkdir -p "artifacts"
@@ -151,7 +151,7 @@ jobs:
           find . -name "*release.aab" -type f -exec cp {} "artifacts" \;
 
       - name: Archive Artifacts
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'mikepenz/multiplatform-markdown-renderer'
         uses: actions/upload-artifact@v7
         with:
           name: "App-Artifacts"
@@ -160,7 +160,7 @@ jobs:
       - name: Build Changelog
         id: github_release
         uses: mikepenz/release-changelog-builder-action@v6
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'mikepenz/multiplatform-markdown-renderer'
         with:
           configuration: ".github/config/configuration.json"
           ignorePreReleases: ${{ !contains(github.ref, '-') }}
@@ -169,7 +169,7 @@ jobs:
 
       - name: Release
         uses: mikepenz/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && github.repository == 'mikepenz/multiplatform-markdown-renderer'
         with:
           body: ${{steps.github_release.outputs.changelog}}
           prerelease: ${{ contains(github.ref, '-rc') || contains(github.ref, '-b') || contains(github.ref, '-a') }}
