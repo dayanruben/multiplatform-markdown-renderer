@@ -51,3 +51,4 @@ xcuserdata/
 
 ## AI
 *.local.json
+.junie/

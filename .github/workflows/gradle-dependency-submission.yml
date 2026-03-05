@@ -6,6 +6,7 @@ on:
 
 jobs:
   gradle-dependency-detection:
+    if: github.repository == 'mikepenz/multiplatform-markdown-renderer'
     runs-on: ubuntu-latest
     permissions:
       contents: write
