@@ -11,6 +11,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(project(":sample:shared"))
+            implementation(baseLibs.jetbrains.compose.runtime)
             implementation(baseLibs.jetbrains.compose.components.resources)
         }
         jvmMain.dependencies {
