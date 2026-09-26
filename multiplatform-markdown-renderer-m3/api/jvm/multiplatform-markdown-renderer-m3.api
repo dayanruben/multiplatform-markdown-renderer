@@ -1,12 +1,12 @@
 public final class com/mikepenz/markdown/m3/ComposableSingletons$MarkdownKt {
 	public static final field INSTANCE Lcom/mikepenz/markdown/m3/ComposableSingletons$MarkdownKt;
 	public fun <init> ()V
-	public final fun getLambda$-398669803$multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function5;
-	public final fun getLambda$115412490$multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function5;
-	public final fun getLambda$441576215$multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda$688114344$multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda$742240695$multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda$999403641$multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function5;
+	public final fun getLambda$-398669803$com_mikepenz_multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function5;
+	public final fun getLambda$115412490$com_mikepenz_multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function5;
+	public final fun getLambda$441576215$com_mikepenz_multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$688114344$com_mikepenz_multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$742240695$com_mikepenz_multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$999403641$com_mikepenz_multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function5;
 }
 
 public final class com/mikepenz/markdown/m3/MarkdownColorsKt {
@@ -26,7 +26,7 @@ public final class com/mikepenz/markdown/m3/MarkdownTypographyKt {
 public final class com/mikepenz/markdown/m3/elements/ComposableSingletons$MarkdownCheckBoxKt {
 	public static final field INSTANCE Lcom/mikepenz/markdown/m3/elements/ComposableSingletons$MarkdownCheckBoxKt;
 	public fun <init> ()V
-	public final fun getLambda$697710124$multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function4;
+	public final fun getLambda$697710124$com_mikepenz_multiplatform_markdown_renderer_m3 ()Lkotlin/jvm/functions/Function4;
 }
 
 public final class com/mikepenz/markdown/m3/elements/MarkdownCheckBoxKt {
