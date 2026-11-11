@@ -3,7 +3,7 @@ rootProject.name = "multiplatform-markdown-renderer-root"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
-    val kotlinVersion = "2.5.0-Beta2"
+    val kotlinVersion = "2.5.0-RC"
     val conventionPluginVersion = "0.11.0"
     resolutionStrategy {
         eachPlugin {
